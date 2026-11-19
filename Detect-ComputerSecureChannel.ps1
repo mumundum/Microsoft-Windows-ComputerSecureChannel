@@ -1,4 +1,12 @@
-﻿$ErrorActionPreference = 'Stop'
+﻿<#
+.SYNOPSIS
+Detects whether the computer's domain secure channel is healthy.
+
+Usage: Use this script as the "Detection script" paired with Remediate-ComputerSecureChannel.ps1 in Intune Remediations. Run in 64-bit PowerShell as SYSTEM.
+Return: exits with code 0 when compliant or when a check is safely skipped, and code 1 when the secure channel is unhealthy or detection fails.
+#>
+
+$ErrorActionPreference = 'Stop'
 
 try {
     $computerSystem = Get-CimInstance -ClassName Win32_ComputerSystem

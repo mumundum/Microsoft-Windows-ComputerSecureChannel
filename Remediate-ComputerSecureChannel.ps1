@@ -1,4 +1,12 @@
-﻿$ErrorActionPreference = 'Stop'
+﻿<#
+.SYNOPSIS
+Repairs an unhealthy computer domain secure channel.
+
+Usage: Use this script as the "Remediation script" paired with Detect-ComputerSecureChannel.ps1 in Intune Remediations. Run in 64-bit PowerShell as SYSTEM.
+Return: exits with code 0 when remediation succeeds and code 1 if the device is not eligible or remediation fails.
+#>
+
+$ErrorActionPreference = 'Stop'
 
 try {
     $computerSystem = Get-CimInstance -ClassName Win32_ComputerSystem

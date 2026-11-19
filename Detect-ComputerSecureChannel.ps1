@@ -1,4 +1,4 @@
-$ErrorActionPreference = 'Stop'
+﻿$ErrorActionPreference = 'Stop'
 
 try {
     $computerSystem = Get-CimInstance -ClassName Win32_ComputerSystem
